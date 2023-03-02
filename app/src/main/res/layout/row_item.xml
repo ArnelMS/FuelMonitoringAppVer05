@@ -1,0 +1,326 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="155dp"
+    android:layout_marginTop="2dp"
+    android:background="@color/white">
+
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardView"
+        android:layout_width="394dp"
+        android:layout_height="151dp"
+        android:layout_marginTop="2dp"
+        app:cardBackgroundColor="#E4E4E4"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+
+            <ImageView
+                android:id="@+id/imageView2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="28dp"
+                app:layout_constraintStart_toEndOf="@+id/imageView3"
+                app:layout_constraintTop_toTopOf="@+id/imageView3"
+                app:srcCompat="@drawable/baseline_delete_24" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/textField1"
+                android:layout_width="140dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="12dp"
+                android:layout_marginTop="3dp"
+                android:hint="@string/Kilometer_Per_Liter"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <TextView
+                    android:id="@+id/tfvKmPerLiterShow"
+                    android:layout_width="110dp"
+                    android:layout_height="wrap_content"
+                    android:paddingStart="5dp"
+                    android:text="@string/Kilometer_Per_Liter"
+                    android:textColor="@color/Gray"
+                    android:textSize="8dp"
+                    tools:ignore="TextSizeCheck" />
+
+                <TextView
+                    android:id="@+id/tvKmPerLiterShow"
+                    android:layout_width="140dp"
+                    android:layout_height="wrap_content"
+                    android:paddingStart="15dp"
+                    android:text="@string/Kilometer_Per_Liter"
+                    android:textColor="@color/black"
+                    tools:layout_editor_absoluteX="16dp"
+                    tools:layout_editor_absoluteY="7dp" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/textField2"
+                android:layout_width="120dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:hint="@string/Price_Per_Liter"
+                app:layout_constraintStart_toEndOf="@+id/textField1"
+                app:layout_constraintTop_toTopOf="@+id/textField1">
+
+                <TextView
+                    android:id="@+id/tfvTotalAmountShow"
+                    android:layout_width="110dp"
+                    android:layout_height="wrap_content"
+                    android:paddingStart="5dp"
+                    android:text="@string/Total_Amount"
+                    android:textColor="@color/Gray"
+                    android:textSize="8dp"
+                    tools:ignore="TextSizeCheck" />
+
+                <TextView
+                    android:id="@+id/tvTotalAmountShow"
+                    android:layout_width="120dp"
+                    android:layout_height="wrap_content"
+                    android:paddingStart="15dp"
+                    android:text="@string/Total_Amount"
+                    android:textColor="@color/black"
+                    tools:layout_editor_absoluteX="151dp"
+                    tools:layout_editor_absoluteY="7dp" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/textField3"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:hint="@string/Millage"
+                app:layout_constraintStart_toEndOf="@+id/textField2"
+                app:layout_constraintTop_toTopOf="@+id/textField2">
+
+                <TextView
+                    android:id="@+id/tfvMillage"
+                    android:layout_width="110dp"
+                    android:layout_height="wrap_content"
+                    android:paddingStart="5dp"
+                    android:text="@string/Millage"
+                    android:textColor="@color/Gray"
+                    android:textSize="8dp"
+                    tools:ignore="TextSizeCheck" />
+
+                <TextView
+                    android:id="@+id/tvMillage"
+                    android:layout_width="110dp"
+                    android:layout_height="wrap_content"
+                    android:paddingStart="15dp"
+                    android:text="@string/Millage"
+                    android:textColor="@color/black"
+                    tools:layout_editor_absoluteX="286dp"
+                    tools:layout_editor_absoluteY="7dp" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/textField4"
+                android:layout_width="140dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:hint="@string/Price_Per_Liter"
+                app:layout_constraintStart_toStartOf="@+id/textField1"
+                app:layout_constraintTop_toBottomOf="@+id/textField1">
+
+                <TextView
+                    android:id="@+id/tfvPricePerLiter"
+                    android:layout_width="110dp"
+                    android:layout_height="wrap_content"
+                    android:paddingStart="5dp"
+                    android:text="@string/Price_Per_Liter"
+                    android:textColor="@color/Gray"
+                    android:textSize="8dp"
+                    tools:ignore="TextSizeCheck" />
+
+                <TextView
+                    android:id="@+id/tvPricePerLiter"
+                    android:layout_width="140dp"
+                    android:layout_height="wrap_content"
+                    android:paddingStart="15dp"
+                    android:text="@string/Price_Per_Liter"
+                    android:textColor="@color/black"
+                    tools:layout_editor_absoluteX="152dp"
+                    tools:layout_editor_absoluteY="34dp" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/textField5"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:hint="@string/Price_Per_Liter"
+                app:layout_constraintStart_toEndOf="@+id/textField6"
+                app:layout_constraintTop_toTopOf="@+id/textField6">
+
+                <TextView
+                    android:id="@+id/tfvGasType"
+                    android:layout_width="110dp"
+                    android:layout_height="wrap_content"
+                    android:paddingStart="5dp"
+                    android:text="@string/Gas_Type"
+                    android:textColor="@color/Gray"
+                    android:textSize="8dp"
+                    tools:ignore="TextSizeCheck" />
+
+                <TextView
+                    android:id="@+id/tvGasType"
+                    android:layout_width="108dp"
+                    android:layout_height="19dp"
+                    android:paddingStart="15dp"
+                    android:text="@string/Gas_Type"
+                    android:textColor="@color/black"
+                    tools:layout_editor_absoluteX="287dp"
+                    tools:layout_editor_absoluteY="34dp" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/textField7"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:hint="@string/Price_Per_Liter"
+                app:layout_constraintStart_toStartOf="@+id/textField4"
+                app:layout_constraintTop_toBottomOf="@+id/textField4">
+
+                <TextView
+                    android:id="@+id/tfvGasStation"
+                    android:layout_width="110dp"
+                    android:layout_height="wrap_content"
+                    android:paddingStart="5dp"
+                    android:text="@string/Gas_Station"
+                    android:textColor="@color/Gray"
+                    android:textSize="8dp"
+                    tools:ignore="TextSizeCheck" />
+
+                <TextView
+                    android:id="@+id/tvGasStation"
+                    android:layout_width="170dp"
+                    android:layout_height="wrap_content"
+                    android:paddingStart="15dp"
+                    android:text="@string/Gas_Station"
+                    android:textColor="@color/black"
+                    tools:layout_editor_absoluteX="16dp"
+                    tools:layout_editor_absoluteY="62dp" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/textField6"
+                android:layout_width="120dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:hint="@string/Price_Per_Liter"
+                app:layout_constraintStart_toEndOf="@+id/textField4"
+                app:layout_constraintTop_toTopOf="@+id/textField4">
+
+                <TextView
+                    android:id="@+id/tfvNumberOfLiter"
+                    android:layout_width="110dp"
+                    android:layout_height="wrap_content"
+                    android:paddingStart="5dp"
+                    android:text="@string/Price_Per_Liter"
+                    android:textColor="@color/Gray"
+                    android:textSize="8dp"
+                    tools:ignore="TextSizeCheck" />
+
+                <TextView
+                    android:id="@+id/tvNumberOfLiter"
+                    android:layout_width="120dp"
+                    android:layout_height="wrap_content"
+                    android:paddingStart="15dp"
+                    android:text="@string/Number_of_Liter"
+                    android:textColor="@color/black"
+                    tools:layout_editor_absoluteX="16dp"
+                    tools:layout_editor_absoluteY="34dp" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/textField8"
+                android:layout_width="220dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:hint="@string/Branch"
+                app:layout_constraintStart_toEndOf="@+id/textField7"
+                app:layout_constraintTop_toTopOf="@+id/textField7">
+
+                <TextView
+                    android:id="@+id/tfvBranch"
+                    android:layout_width="110dp"
+                    android:layout_height="wrap_content"
+                    android:paddingStart="5dp"
+                    android:text="@string/Branch"
+                    android:textColor="@color/Gray"
+                    android:textSize="8dp"
+                    tools:ignore="TextSizeCheck" />
+
+                <TextView
+                    android:id="@+id/tvBranch"
+                    android:layout_width="220dp"
+                    android:layout_height="wrap_content"
+                    android:paddingStart="15dp"
+                    android:text="@string/Branch"
+                    android:textColor="@color/black"
+                    tools:layout_editor_absoluteX="194dp"
+                    tools:layout_editor_absoluteY="62dp" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/textField9"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:hint="@string/Price_Per_Liter"
+                app:layout_constraintStart_toStartOf="@+id/textField7"
+                app:layout_constraintTop_toBottomOf="@+id/textField7">
+
+                <TextView
+                    android:id="@+id/tfvDate"
+                    android:layout_width="110dp"
+                    android:layout_height="wrap_content"
+                    android:paddingStart="5dp"
+                    android:text="@string/Date"
+                    android:textColor="@color/Gray"
+                    android:textSize="8dp"
+                    tools:ignore="TextSizeCheck" />
+
+                <TextView
+                    android:id="@+id/tvDate"
+                    android:layout_width="150dp"
+                    android:layout_height="wrap_content"
+                    android:paddingStart="15dp"
+                    android:text="@string/Date"
+                    android:textColor="@color/black"
+                    app:layout_constraintStart_toStartOf="@+id/tvGasStation2"
+                    tools:layout_editor_absoluteY="89dp" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <ImageView
+                android:id="@+id/imageView3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="104dp"
+                android:layout_marginTop="12dp"
+                app:layout_constraintStart_toEndOf="@+id/textField9"
+                app:layout_constraintTop_toBottomOf="@+id/textField8"
+                app:srcCompat="@drawable/baseline_edit_24" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.cardview.widget.CardView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

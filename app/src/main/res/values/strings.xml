@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name">FuelMonitoringAppVer05</string>
+
+    <string name="Kilometer_Per_Liter">Kilometer Per Liter</string>
+    <string name="Total_Amount">Total Amount</string>
+    <string name="Millage">Millage</string>
+    <string name="Price_Per_Liter">Price Per Liter</string>
+    <string name="Number_of_Liter">Number of Liter</string>
+    <string name="Gas_Station">Gas Station</string>
+    <string name="Gas_Type">Gas Type</string>
+    <string name="Branch">Branch</string>
+    <string name="Save">Save</string>
+    <string name="View">View</string>
+    <string name="Date">Date</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+</resources>

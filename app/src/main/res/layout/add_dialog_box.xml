@@ -1,0 +1,304 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="680dp"
+    android:layout_marginTop="2dp">
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardView"
+        android:layout_width="355dp"
+        android:layout_height="471dp"
+        android:layout_marginTop="5dp"
+        app:cardBackgroundColor="#E4E4E4"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+
+            <ImageView
+                android:id="@+id/imageView3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="72dp"
+                app:layout_constraintBottom_toBottomOf="@+id/imageView5"
+                app:layout_constraintEnd_toStartOf="@+id/imageView2"
+                app:layout_constraintTop_toTopOf="@+id/imageView5"
+                app:srcCompat="@drawable/baseline_edit_24" />
+
+            <ImageView
+                android:id="@+id/imageView2"
+                android:layout_width="22dp"
+                android:layout_height="24dp"
+                android:layout_marginEnd="72dp"
+                app:layout_constraintBottom_toBottomOf="@+id/imageView3"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/imageView3"
+                app:srcCompat="@drawable/baseline_delete_24" />
+
+            <ImageView
+                android:id="@+id/imageView5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="68dp"
+                android:layout_marginBottom="10dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/imageView3"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:srcCompat="@drawable/baseline_add_24" />
+
+            <ScrollView
+                android:layout_width="345dp"
+                android:layout_height="415dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="207dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.0">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:orientation="vertical">
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/textField1"
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                        android:layout_width="320dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="15dp"
+                        android:hint="@string/Kilometer_Per_Liter"
+                        android:textColorHint="@color/Gray"
+                        app:boxBackgroundColor="@color/white"
+                        app:boxStrokeColor="@color/black"
+                        app:hintTextColor="@color/Gray"
+                        tools:layout_editor_absoluteX="-142dp"
+                        tools:layout_editor_absoluteY="56dp">
+
+                        <EditText
+                            android:id="@+id/tvKmPerLiterShow"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:paddingStart="15dp"
+                            android:textColor="@color/black"
+                            android:textColorHint="@color/Gray"
+                            tools:layout_editor_absoluteX="16dp"
+                            tools:layout_editor_absoluteY="7dp" />
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/textField2"
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                        android:layout_width="320dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="15dp"
+                        android:layout_marginTop="8dp"
+                        android:hint="@string/Total_Amount"
+                        android:textColorHint="@color/Gray"
+                        app:boxBackgroundColor="@color/white"
+                        app:boxStrokeColor="@color/black"
+                        app:hintTextColor="@color/Gray">
+
+                        <EditText
+                            android:id="@+id/etTotalAmountShow"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:paddingStart="15dp"
+                            android:textColor="@color/black"
+                            android:textColorHint="@color/Gray"
+                            tools:layout_editor_absoluteX="151dp"
+                            tools:layout_editor_absoluteY="7dp" />
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/textField3"
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                        android:layout_width="320dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="15dp"
+                        android:layout_marginTop="8dp"
+                        android:hint="@string/Millage"
+                        android:textColorHint="@color/Gray"
+                        app:boxBackgroundColor="@color/white"
+                        app:boxStrokeColor="@color/black"
+                        app:hintTextColor="@color/Gray">
+
+                        <EditText
+                            android:id="@+id/etMillage"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:paddingStart="15dp"
+                            android:textColor="@color/black"
+                            android:textColorHint="@color/Gray"
+                            tools:layout_editor_absoluteX="286dp"
+                            tools:layout_editor_absoluteY="7dp" />
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/textField4"
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                        android:layout_width="320dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="15dp"
+                        android:layout_marginTop="8dp"
+                        android:hint="@string/Price_Per_Liter"
+                        android:textColorHint="@color/Gray"
+                        app:boxBackgroundColor="@color/white"
+                        app:boxStrokeColor="@color/black"
+                        app:hintTextColor="@color/Gray">
+
+                        <EditText
+                            android:id="@+id/etPricePerLiter"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:paddingStart="15dp"
+                            android:textColor="@color/black"
+                            android:textColorHint="@color/Gray"
+                            tools:layout_editor_absoluteX="152dp"
+                            tools:layout_editor_absoluteY="34dp" />
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/textField5"
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                        android:layout_width="320dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="15dp"
+                        android:layout_marginTop="8dp"
+                        android:hint="@string/Gas_Type"
+                        android:textColorHint="@color/Gray"
+                        app:boxBackgroundColor="@color/white"
+                        app:boxStrokeColor="@color/black"
+                        app:hintTextColor="@color/Gray">
+
+                        <EditText
+                            android:id="@+id/etGasType"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:paddingStart="15dp"
+                            android:textColor="@color/black"
+                            android:textColorHint="@color/Gray"
+                            tools:layout_editor_absoluteX="287dp"
+                            tools:layout_editor_absoluteY="34dp" />
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/textField6"
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                        android:layout_width="320dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="15dp"
+                        android:layout_marginTop="8dp"
+                        android:hint="@string/Number_of_Liter"
+                        android:textColorHint="@color/Gray"
+                        app:boxBackgroundColor="@color/white"
+                        app:boxStrokeColor="@color/black"
+                        app:hintTextColor="@color/Gray">
+
+                        <EditText
+                            android:id="@+id/etNumberOfLiter"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:paddingStart="15dp"
+                            android:textColor="@color/black"
+                            android:textColorHint="@color/Gray"
+                            tools:layout_editor_absoluteX="16dp"
+                            tools:layout_editor_absoluteY="34dp" />
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/textField7"
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                        android:layout_width="320dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="15dp"
+                        android:layout_marginTop="8dp"
+                        android:hint="@string/Gas_Station"
+                        android:textColorHint="@color/Gray"
+                        app:boxBackgroundColor="@color/white"
+                        app:boxStrokeColor="@color/black"
+                        app:hintTextColor="@color/Gray">
+
+                        <EditText
+                            android:id="@+id/etGasStation"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:paddingStart="15dp"
+                            android:textColor="@color/black"
+                            android:textColorHint="@color/Gray"
+                            tools:layout_editor_absoluteX="16dp"
+                            tools:layout_editor_absoluteY="62dp" />
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/textField8"
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                        android:layout_width="320dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="15dp"
+                        android:layout_marginTop="8dp"
+                        android:hint="@string/Branch"
+                        android:textColorHint="@color/Gray"
+                        app:boxBackgroundColor="@color/white"
+                        app:boxStrokeColor="@color/black"
+                        app:hintTextColor="@color/Gray">
+
+                        <EditText
+                            android:id="@+id/etBranch"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:paddingStart="15dp"
+                            android:textColor="@color/black"
+                            android:textColorHint="@color/Gray"
+                            tools:layout_editor_absoluteX="194dp"
+                            tools:layout_editor_absoluteY="62dp" />
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/textField9"
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                        android:layout_width="320dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="15dp"
+                        android:layout_marginTop="8dp"
+                        android:hint="@string/Date"
+                        android:textColorHint="@color/Gray"
+                        app:boxBackgroundColor="@color/white"
+                        app:boxStrokeColor="@color/black"
+                        app:hintTextColor="@color/Gray"
+                        tools:layout_editor_absoluteX="-82dp"
+                        tools:layout_editor_absoluteY="647dp">
+
+                        <EditText
+                            android:id="@+id/etDate"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:paddingStart="15dp"
+                            android:textColor="@color/black"
+                            android:textColorHint="@color/Gray"
+                            app:layout_constraintStart_toStartOf="@+id/tvGasStation2"
+                            tools:layout_editor_absoluteY="89dp" />
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                </LinearLayout>
+            </ScrollView>
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.cardview.widget.CardView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
