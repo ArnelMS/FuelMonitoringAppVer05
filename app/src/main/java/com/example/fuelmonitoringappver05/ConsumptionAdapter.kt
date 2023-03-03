@@ -5,9 +5,11 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.fuelmonitoringappver05.databinding.RowItemBinding
 
-class ConsumptionAdapter(val consumptions : List<Consumptions>):RecyclerView.Adapter<ConsumptionAdapter.ConsumptionViewHolder>() {
+class ConsumptionAdapter(val consumptions : MutableList<Consumptions>):RecyclerView.Adapter<ConsumptionAdapter.ConsumptionViewHolder>() {
 
     var onItemClick : ((Consumptions)-> Unit)? = null
+    var onUpdateButtonClick : ((Consumptions,Int)-> Unit)? = null
+    var onDeleteButtonClick : ((Consumptions,Int)-> Unit)? = null
 
     inner class ConsumptionViewHolder(val binding:RowItemBinding): RecyclerView.ViewHolder(binding.root)
 
@@ -28,13 +30,23 @@ class ConsumptionAdapter(val consumptions : List<Consumptions>):RecyclerView.Ada
             tvGasStation.text = consumptions[position].gasStation.toString()
             tvBranch.text = consumptions[position].branch.toString()
             tvDate.text = consumptions[position].date
+
+            imgBtnView.setOnClickListener(){
+                onUpdateButtonClick?.invoke(consumptions[position],position)
+            }
+
+            imgBtnDelete.setOnClickListener(){
+                onDeleteButtonClick?.invoke(consumptions[position],position)
+
+            }
+
         }
         holder.itemView.setOnClickListener(){
             onItemClick?.invoke(consumptions[position])
 
         }
-    }
 
+    }
     override fun getItemCount(): Int {
         return consumptions.size
     }

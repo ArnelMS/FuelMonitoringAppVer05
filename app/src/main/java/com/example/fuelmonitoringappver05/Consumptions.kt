@@ -1,5 +1,9 @@
 package com.example.fuelmonitoringappver05
 
+import androidx.room.Entity
+import androidx.room.PrimaryKey
+
+@Entity
 data class Consumptions (
     var kmPerLtr: String,
     var totalAmount: String,
@@ -10,6 +14,8 @@ data class Consumptions (
     var gasStation: String,
     var branch: String,
     var date: String
-
-)
+    ){
+    @PrimaryKey(autoGenerate = true)
+    var id : Int = 0
+}
 

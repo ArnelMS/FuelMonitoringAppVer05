@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:layout_marginTop="2dp"
+    android:background="@color/white"
     tools:context=".ConsumptionDetailActivity">
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -27,9 +28,20 @@
             app:layout_constraintTop_toBottomOf="@+id/textField1">
 
             <TextView
+                android:id="@+id/tfvTotalAmountShow"
+                android:layout_width="110dp"
+                android:layout_height="wrap_content"
+                android:paddingStart="5dp"
+                android:text="@string/Total_Amount"
+                android:textColor="@color/Gray"
+                android:textSize="12sp"
+                tools:ignore="TextSizeCheck" />
+
+            <TextView
                 android:id="@+id/tvTotalAmountShow"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
+                android:background="@color/white"
                 android:paddingStart="15dp"
                 android:paddingTop="10dp"
                 android:text="@string/Total_Amount"
@@ -51,6 +63,16 @@
             app:hintTextColor="@color/Gray"
             app:layout_constraintStart_toStartOf="@+id/textField2"
             app:layout_constraintTop_toBottomOf="@+id/textField2">
+
+            <TextView
+                android:id="@+id/tfvMillage"
+                android:layout_width="110dp"
+                android:layout_height="wrap_content"
+                android:paddingStart="5dp"
+                android:text="@string/Millage"
+                android:textColor="@color/Gray"
+                android:textSize="12sp"
+                tools:ignore="TextSizeCheck" />
 
             <TextView
                 android:id="@+id/tvMillage"
@@ -77,6 +99,16 @@
             app:hintTextColor="@color/Gray"
             app:layout_constraintStart_toStartOf="@+id/textField3"
             app:layout_constraintTop_toBottomOf="@+id/textField3">
+
+            <TextView
+                android:id="@+id/tfvPricePerLiter"
+                android:layout_width="110dp"
+                android:layout_height="wrap_content"
+                android:paddingStart="5dp"
+                android:text="@string/Price_Per_Liter"
+                android:textColor="@color/Gray"
+                android:textSize="12sp"
+                tools:ignore="TextSizeCheck" />
 
             <TextView
                 android:id="@+id/tvPricePerLiter"
@@ -106,6 +138,16 @@
             app:layout_constraintTop_toBottomOf="@+id/textField4">
 
             <TextView
+                android:id="@+id/tfvGasType"
+                android:layout_width="110dp"
+                android:layout_height="wrap_content"
+                android:paddingStart="5dp"
+                android:text="@string/Gas_Type"
+                android:textColor="@color/Gray"
+                android:textSize="12sp"
+                tools:ignore="TextSizeCheck" />
+
+            <TextView
                 android:id="@+id/tvGasType"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
@@ -130,6 +172,16 @@
             app:hintTextColor="@color/Gray"
             app:layout_constraintStart_toStartOf="@+id/textField5"
             app:layout_constraintTop_toBottomOf="@+id/textField5">
+
+            <TextView
+                android:id="@+id/tfvNumberOfLiter"
+                android:layout_width="110dp"
+                android:layout_height="wrap_content"
+                android:paddingStart="5dp"
+                android:text="@string/Price_Per_Liter"
+                android:textColor="@color/Gray"
+                android:textSize="12sp"
+                tools:ignore="TextSizeCheck" />
 
             <TextView
                 android:id="@+id/tvNumberOfLiter"
@@ -159,6 +211,16 @@
             app:layout_constraintTop_toBottomOf="@+id/textField6">
 
             <TextView
+                android:id="@+id/tfvGasStation"
+                android:layout_width="110dp"
+                android:layout_height="wrap_content"
+                android:paddingStart="5dp"
+                android:text="@string/Gas_Station"
+                android:textColor="@color/Gray"
+                android:textSize="12sp"
+                tools:ignore="TextSizeCheck" />
+
+            <TextView
                 android:id="@+id/tvGasStation"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
@@ -183,6 +245,16 @@
             app:hintTextColor="@color/Gray"
             app:layout_constraintStart_toStartOf="@+id/textField7"
             app:layout_constraintTop_toBottomOf="@+id/textField7">
+
+            <TextView
+                android:id="@+id/tfvBranch"
+                android:layout_width="110dp"
+                android:layout_height="wrap_content"
+                android:paddingStart="5dp"
+                android:text="@string/Branch"
+                android:textColor="@color/Gray"
+                android:textSize="12sp"
+                tools:ignore="TextSizeCheck" />
 
             <TextView
                 android:id="@+id/tvBranch"
@@ -212,6 +284,16 @@
             app:layout_constraintTop_toBottomOf="@+id/textField8">
 
             <TextView
+                android:id="@+id/tfvDate"
+                android:layout_width="110dp"
+                android:layout_height="wrap_content"
+                android:paddingStart="5dp"
+                android:text="@string/Date"
+                android:textColor="@color/Gray"
+                android:textSize="12sp"
+                tools:ignore="TextSizeCheck" />
+
+            <TextView
                 android:id="@+id/tvDate"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
@@ -228,16 +310,25 @@
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:layout_width="320dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="32dp"
+            android:layout_marginTop="20dp"
             android:hint="@string/Kilometer_Per_Liter"
             android:textColorHint="@color/Gray"
             app:boxBackgroundColor="@color/white"
             app:boxStrokeColor="@color/black"
             app:hintTextColor="@color/Gray"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.461"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent">
+
+            <TextView
+                android:id="@+id/tfvKmPerLiterShow"
+                android:layout_width="110dp"
+                android:layout_height="wrap_content"
+                android:paddingStart="5dp"
+                android:text="@string/Kilometer_Per_Liter"
+                android:textColor="@color/Gray"
+                android:textSize="12sp"
+                tools:ignore="TextSizeCheck" />
 
             <TextView
                 android:id="@+id/tvKmPerLiterShow"
