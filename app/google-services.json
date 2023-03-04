@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "1017353058338",
+    "project_id": "fuelmonitoringappver05",
+    "storage_bucket": "fuelmonitoringappver05.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1017353058338:android:d331865f5f0ad73699f27b",
+        "android_client_info": {
+          "package_name": "com.example.fuelmonitoringappver05"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1017353058338-u8pg8t34t3lvmicf5tqe26asitk8ef9d.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA25qrlyVSgDzQ_x8WaEUZpWngf9GXVTb0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1017353058338-u8pg8t34t3lvmicf5tqe26asitk8ef9d.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

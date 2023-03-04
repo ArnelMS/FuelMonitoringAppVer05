@@ -1,15 +1,18 @@
 package com.example.fuelmonitoringappver05
 
+import android.app.Dialog
+import android.content.Context
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
 import com.example.fuelmonitoringappver05.databinding.RowItemBinding
 
 class ConsumptionAdapter(val consumptions : MutableList<Consumptions>):RecyclerView.Adapter<ConsumptionAdapter.ConsumptionViewHolder>() {
 
     var onItemClick : ((Consumptions)-> Unit)? = null
-    var onUpdateButtonClick : ((Consumptions,Int)-> Unit)? = null
     var onDeleteButtonClick : ((Consumptions,Int)-> Unit)? = null
+    var onUpdateButtonClick : ((Consumptions,Int)-> Unit)? = null
 
     inner class ConsumptionViewHolder(val binding:RowItemBinding): RecyclerView.ViewHolder(binding.root)
 
@@ -31,23 +34,24 @@ class ConsumptionAdapter(val consumptions : MutableList<Consumptions>):RecyclerV
             tvBranch.text = consumptions[position].branch.toString()
             tvDate.text = consumptions[position].date
 
-            imgBtnView.setOnClickListener(){
+            imgBtnCancel.setOnClickListener(){
+                onDeleteButtonClick?.invoke(consumptions[position],position)
+            }
+
+            imgBtnEdit.setOnClickListener(){
                 onUpdateButtonClick?.invoke(consumptions[position],position)
             }
-
-            imgBtnDelete.setOnClickListener(){
-                onDeleteButtonClick?.invoke(consumptions[position],position)
-
-            }
-
         }
+
         holder.itemView.setOnClickListener(){
             onItemClick?.invoke(consumptions[position])
 
         }
 
     }
+
     override fun getItemCount(): Int {
         return consumptions.size
     }
+
 }

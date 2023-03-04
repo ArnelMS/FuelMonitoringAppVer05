@@ -14,4 +14,19 @@
     <string name="Date">Date</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <string name="textview">TextView</string>
+    <string name="thank_you_for_using">Thank you for Using</string>
+
+    <string name="FullName">Full Name</string>
+    <string name="Mobile_number">Mobile Number</string>
+    <string name="Email">Email</string>
+    <string name="Vehicle_Name">Vehicle Name</string>
+    <string name="Vehicle_Model">Vehicle Model</string>
+    <string name="Plate_Number">Vehicle Plate #</string>
+
+    <string name="UsernameEmail">Username / Email</string>
+    <string name="Password">Password</string>
+
+
 </resources>

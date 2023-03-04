@@ -27,12 +27,12 @@
 
 
             <ImageView
-                android:id="@+id/imgBtnDelete"
+                android:id="@+id/imgBtnCancel"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="28dp"
-                app:layout_constraintStart_toEndOf="@+id/imgBtnView"
-                app:layout_constraintTop_toTopOf="@+id/imgBtnView"
+                app:layout_constraintStart_toEndOf="@+id/imgBtnEdit"
+                app:layout_constraintTop_toTopOf="@+id/imgBtnEdit"
                 app:srcCompat="@drawable/baseline_delete_24" />
 
             <com.google.android.material.textfield.TextInputLayout
@@ -309,7 +309,7 @@
             </com.google.android.material.textfield.TextInputLayout>
 
             <ImageView
-                android:id="@+id/imgBtnView"
+                android:id="@+id/imgBtnEdit"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="104dp"

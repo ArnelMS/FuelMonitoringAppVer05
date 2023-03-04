@@ -13,7 +13,11 @@ interface ConsumptionDao {
     @Query("SELECT * FROM Consumptions")
     fun getAllConsumptions():MutableList<Consumptions>
 
+    @Query("UPDATE Consumptions SET date = :date WHERE id = :id")
+    fun updateConsumptions(date:String, id:Int)
 
+    @Query("DELETE FROM Consumptions WHERE id = :id")
+    fun deleteConsumption(id:Int)
 
 
 }

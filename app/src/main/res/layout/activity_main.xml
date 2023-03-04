@@ -6,6 +6,17 @@
     android:layout_height="match_parent"
     android:background="@color/white">
 
+        <TextView
+            android:id="@+id/tvCurrentDate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginBottom="15dp"
+            android:hint="Current Date"
+            android:textColor="@color/black"
+            app:layout_constraintBottom_toBottomOf="@+id/recyclerView"
+            app:layout_constraintStart_toStartOf="parent" />
+
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/recyclerView"
             android:layout_width="match_parent"
@@ -18,11 +29,11 @@
             app:layout_constraintVertical_bias="0.608" />
 
         <ImageView
-            android:id="@+id/imageView"
+            android:id="@+id/imgBtnMenu"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            app:layout_constraintEnd_toStartOf="@+id/tvFuelGasUpHistory"
-            app:layout_constraintHorizontal_bias="0.187"
+            android:layout_marginStart="16dp"
+            app:layout_constraintBottom_toBottomOf="@+id/tvFuelGasUpHistory"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="@+id/tvFuelGasUpHistory"
             app:srcCompat="@drawable/baseline_menu_24" />
@@ -91,13 +102,27 @@
             android:id="@+id/tvFuelGasUpHistory"
             android:layout_width="182dp"
             android:layout_height="18dp"
-            android:layout_marginTop="20dp"
-            android:layout_marginEnd="68dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
             android:text="FUEL / GAS UP HISTORY"
+            android:textAlignment="center"
             android:textColor="@color/black"
             android:textStyle="bold"
+            app:layout_constraintBottom_toTopOf="@+id/recyclerView"
+            app:layout_constraintEnd_toStartOf="@+id/btnInfo"
+            app:layout_constraintStart_toEndOf="@+id/imgBtnMenu"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.5" />
+
+        <ImageView
+            android:id="@+id/btnInfo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="16dp"
+            app:layout_constraintBottom_toBottomOf="@+id/tvFuelGasUpHistory"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="@+id/tvFuelGasUpHistory"
+            app:srcCompat="@drawable/baseline_info_24" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
