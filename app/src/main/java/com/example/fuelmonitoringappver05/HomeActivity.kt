@@ -26,15 +26,17 @@ class HomeActivity : AppCompatActivity() {
         setContentView(binding.root)
 
 
-        binding.btnCamera2.setOnClickListener() {
-            showCamera()
+        binding.imgProfilePhoto.setOnClickListener() {
+            showCameraProfile()
         }
-        binding.btnGallery2.setOnClickListener() {
-            showCamera()
+
+        binding.imgVehiclePhoto.setOnClickListener() {
+            showCameraVechile()
         }
+
     }
 
-    private fun showCamera() {
+    private fun showCameraProfile() {
         Dexter.withContext(this).withPermission(
             Manifest.permission.CAMERA
         ).withListener(object : PermissionListener {
@@ -45,8 +47,8 @@ class HomeActivity : AppCompatActivity() {
                 cameraLauncher1.launch(cameraIntent)
                 Toast.makeText(applicationContext, "Permission Granted", Toast.LENGTH_SHORT).show()
 
-                cameraLauncher2.launch(cameraIntent)
-                Toast.makeText(applicationContext, "Permission Granted", Toast.LENGTH_SHORT).show()
+//                cameraLauncher2.launch(cameraIntent)
+//                Toast.makeText(applicationContext, "Permission Granted", Toast.LENGTH_SHORT).show()
             }
 
             override fun onPermissionDenied(p0: PermissionDeniedResponse?) {
@@ -67,20 +69,47 @@ class HomeActivity : AppCompatActivity() {
         registerForActivityResult(ActivityResultContracts.StartActivityForResult()) { result ->
             if (result.resultCode == Activity.RESULT_OK) {
                 result.data?.extras.let {
-                    val image: Bitmap = result.data?.extras?.get("data") as Bitmap
-                    binding.imgProfilePhoto.setImageBitmap(image)
+                    val image1: Bitmap = result.data?.extras?.get("data") as Bitmap
+                    binding.imgProfilePhoto.setImageBitmap(image1)
                 }
             }
         }
-    val cameraLauncher2 =
+
+
+private fun showCameraVechile() {
+    Dexter.withContext(this).withPermission(
+        Manifest.permission.CAMERA
+    ).withListener(object : PermissionListener {
+        override fun onPermissionGranted(p0: PermissionGrantedResponse?) {
+            val cameraIntent = Intent(MediaStore.ACTION_IMAGE_CAPTURE)
+//                startActivity(cameraIntent) // only used to access camera
+
+            cameraLauncher.launch(cameraIntent)
+            Toast.makeText(applicationContext, "Permission Granted", Toast.LENGTH_SHORT).show()
+
+        }
+
+        override fun onPermissionDenied(p0: PermissionDeniedResponse?) {
+            Toast.makeText(applicationContext, "Permission Granted", Toast.LENGTH_SHORT).show()
+        }
+
+        override fun onPermissionRationaleShouldBeShown(
+            request: PermissionRequest?,
+            token: PermissionToken?
+        ) {
+            token?.continuePermissionRequest()
+        }
+
+    }).onSameThread().check()
+}
+
+    val cameraLauncher =
         registerForActivityResult(ActivityResultContracts.StartActivityForResult()) { result ->
             if (result.resultCode == Activity.RESULT_OK) {
                 result.data?.extras.let {
-                    val image: Bitmap = result.data?.extras?.get("data") as Bitmap
-                    binding.imgVehiclePhoto.setImageBitmap(image)
-
+                    val image2: Bitmap = result.data?.extras?.get("data") as Bitmap
+                    binding.imgVehiclePhoto.setImageBitmap(image2)
                 }
-
             }
         }
 }

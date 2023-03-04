@@ -5,35 +5,72 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:layout_marginTop="2dp"
-    android:background="@color/white">
+    android:background="@color/white"
+    tools:context=".Profile.ProfileActivity">
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:layout_width="match_parent"
+        android:layout_width="409dp"
         android:layout_height="match_parent"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
-
-        <ImageView
-            android:id="@+id/imgBtnCancel"
-            android:layout_width="22dp"
-            android:layout_height="24dp"
-            android:layout_marginEnd="72dp"
-            app:layout_constraintBottom_toBottomOf="@+id/imgBtnSave"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/imgBtnSave"
-            app:srcCompat="@drawable/baseline_cancel_24" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.5">
 
         <ImageView
             android:id="@+id/imgBtnSave"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="120dp"
+            android:layout_marginStart="68dp"
             android:layout_marginBottom="48dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:srcCompat="@drawable/baseline_add_24" />
+
+        <ImageView
+            android:id="@+id/imgBtnUpdate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="36dp"
+            app:layout_constraintBottom_toBottomOf="@+id/imgBtnSave"
+            app:layout_constraintStart_toEndOf="@+id/imgBtnSave"
+            app:layout_constraintTop_toTopOf="@+id/imgBtnSave"
+            app:layout_constraintVertical_bias="0.0"
+            app:srcCompat="@drawable/baseline_edit_24" />
+
+        <ImageView
+            android:id="@+id/imgBtnView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="36dp"
+            app:layout_constraintBottom_toBottomOf="@+id/imgBtnUpdate"
+            app:layout_constraintStart_toEndOf="@+id/imgBtnUpdate"
+            app:layout_constraintTop_toTopOf="@+id/imgBtnUpdate"
+            app:layout_constraintVertical_bias="0.0"
+            app:srcCompat="@drawable/baseline_file_upload_24" />
+
+        <ImageView
+            android:id="@+id/imgBtnDelete"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="36dp"
+            app:layout_constraintBottom_toBottomOf="@+id/imgBtnUpdate"
+            app:layout_constraintStart_toEndOf="@+id/imgBtnView"
+            app:layout_constraintTop_toTopOf="@+id/imgBtnUpdate"
+            app:layout_constraintVertical_bias="0.0"
+            app:srcCompat="@drawable/baseline_delete_24" />
+
+        <ImageView
+            android:id="@+id/imgBtnCancel"
+            android:layout_width="22dp"
+            android:layout_height="24dp"
+            android:layout_marginStart="58dp"
+            app:layout_constraintBottom_toBottomOf="@+id/imgBtnDelete"
+            app:layout_constraintStart_toEndOf="@+id/imgBtnDelete"
+            app:layout_constraintTop_toTopOf="@+id/imgBtnDelete"
+            app:layout_constraintVertical_bias="0.0"
+            app:srcCompat="@drawable/baseline_cancel_24" />
 
         <Button
             android:id="@+id/btnCamera2"
