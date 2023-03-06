@@ -8,28 +8,20 @@
     android:background="@color/white"
     tools:context=".ConsumptionDetailActivity">
 
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerProfileView"
+        android:layout_width="match_parent"
+        android:layout_height="500dp"
+        android:layout_marginTop="150dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/constraintLayout" />
+
     <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
-
-        <Button
-            android:id="@+id/btnCamera2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="4dp"
-            android:layout_marginTop="12dp"
-            android:text="Open Camera"
-            app:layout_constraintStart_toStartOf="@+id/imgProfilePhoto"
-            app:layout_constraintTop_toBottomOf="@+id/imgProfilePhoto" />
-
-        <Button
-            android:id="@+id/btnGallery2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="24dp"
-            android:text="Open Gallery"
-            app:layout_constraintStart_toEndOf="@+id/btnCamera2"
-            app:layout_constraintTop_toTopOf="@+id/btnCamera2" />
 
         <ImageView
             android:id="@+id/imgProfilePhoto"
@@ -66,216 +58,6 @@
             app:layout_constraintHorizontal_bias="0.473"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
-
-        <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/textField1"
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-            android:layout_width="320dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="80dp"
-            android:hint="@string/FullName"
-            android:textColorHint="@color/Gray"
-            app:boxBackgroundColor="@color/white"
-            app:boxStrokeColor="@color/black"
-            app:hintTextColor="@color/Gray"
-            app:layout_constraintBottom_toTopOf="@+id/textField2"
-            app:layout_constraintStart_toStartOf="@+id/imgProfilePhoto"
-            app:layout_constraintTop_toBottomOf="@+id/imgProfilePhoto">
-
-            <TextView
-                android:id="@+id/tfvFullname"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:paddingStart="15dp"
-                android:text="@string/FullName"
-                android:textColor="@color/black"
-                android:textColorHint="@color/Gray" />
-
-            <TextView
-                android:id="@+id/tvFullname"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:paddingStart="15dp"
-                android:textColor="@color/black"
-                android:textColorHint="@color/Gray" />
-        </com.google.android.material.textfield.TextInputLayout>
-
-        <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/textField2"
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-            android:layout_width="320dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            android:hint="@string/Mobile_number"
-            android:textColorHint="@color/Gray"
-            app:boxBackgroundColor="@color/white"
-            app:boxStrokeColor="@color/black"
-            app:hintTextColor="@color/Gray"
-            app:layout_constraintBottom_toTopOf="@+id/textField3"
-            app:layout_constraintEnd_toEndOf="@+id/textField1"
-            app:layout_constraintStart_toStartOf="@+id/textField1"
-            app:layout_constraintTop_toBottomOf="@+id/textField1">
-
-            <TextView
-                android:id="@+id/tfvMobile"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:paddingStart="15dp"
-                android:text="@string/Mobile_number"
-                android:textColor="@color/black"
-                android:textColorHint="@color/Gray" />
-
-            <TextView
-                android:id="@+id/tvMobile"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:paddingStart="15dp"
-                android:textColor="@color/black"
-                android:textColorHint="@color/Gray" />
-        </com.google.android.material.textfield.TextInputLayout>
-
-        <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/textField3"
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-            android:layout_width="320dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            android:hint="@string/Email"
-            android:textColorHint="@color/Gray"
-            app:boxBackgroundColor="@color/white"
-            app:boxStrokeColor="@color/black"
-            app:hintTextColor="@color/Gray"
-            app:layout_constraintBottom_toTopOf="@+id/textField4"
-            app:layout_constraintEnd_toEndOf="@+id/textField2"
-            app:layout_constraintStart_toStartOf="@+id/textField2"
-            app:layout_constraintTop_toBottomOf="@+id/textField2">
-
-            <TextView
-                android:id="@+id/tfvEmail"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:paddingStart="15dp"
-                android:text="@string/Email"
-                android:textColor="@color/black"
-                android:textColorHint="@color/Gray" />
-
-            <TextView
-                android:id="@+id/tvEmail"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:paddingStart="15dp"
-                android:textColor="@color/black"
-                android:textColorHint="@color/Gray" />
-        </com.google.android.material.textfield.TextInputLayout>
-
-        <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/textField4"
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-            android:layout_width="320dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            android:hint="@string/Vehicle_Name"
-            android:textColorHint="@color/Gray"
-            app:boxBackgroundColor="@color/white"
-            app:boxStrokeColor="@color/black"
-            app:hintTextColor="@color/Gray"
-            app:layout_constraintBottom_toTopOf="@+id/textField5"
-            app:layout_constraintEnd_toEndOf="@+id/textField3"
-            app:layout_constraintStart_toStartOf="@+id/textField3"
-            app:layout_constraintTop_toBottomOf="@+id/textField3">
-
-            <TextView
-                android:id="@+id/tfvVehicleName"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:paddingStart="15dp"
-                android:text="@string/Vehicle_Name"
-                android:textColor="@color/black"
-                android:textColorHint="@color/Gray" />
-
-            <TextView
-                android:id="@+id/tvVehicleName"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:paddingStart="15dp"
-                android:textColor="@color/black"
-                android:textColorHint="@color/Gray" />
-
-        </com.google.android.material.textfield.TextInputLayout>
-
-        <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/textField5"
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-            android:layout_width="320dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            android:hint="@string/Vehicle_Model"
-            android:textColorHint="@color/Gray"
-            app:boxBackgroundColor="@color/white"
-            app:boxStrokeColor="@color/black"
-            app:hintTextColor="@color/Gray"
-            app:layout_constraintBottom_toTopOf="@+id/textField6"
-            app:layout_constraintEnd_toEndOf="@+id/textField4"
-            app:layout_constraintStart_toStartOf="@+id/textField4"
-            app:layout_constraintTop_toBottomOf="@+id/textField4">
-
-            <TextView
-                android:id="@+id/tfvVehicleModel"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:paddingStart="15dp"
-                android:text="@string/Vehicle_Model"
-                android:textColor="@color/black"
-                android:textColorHint="@color/Gray" />
-
-            <TextView
-                android:id="@+id/tvVehicleModel"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:paddingStart="15dp"
-                android:textColor="@color/black"
-                android:textColorHint="@color/Gray" />
-        </com.google.android.material.textfield.TextInputLayout>
-
-        <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/textField6"
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-            android:layout_width="320dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            android:hint="@string/Plate_Number"
-            android:textColorHint="@color/Gray"
-            app:boxBackgroundColor="@color/white"
-            app:boxStrokeColor="@color/black"
-            app:hintTextColor="@color/Gray"
-            app:layout_constraintEnd_toEndOf="@+id/textField5"
-            app:layout_constraintStart_toStartOf="@+id/textField5"
-            app:layout_constraintTop_toBottomOf="@+id/textField5">
-
-            <TextView
-                android:id="@+id/tfvVehiclePlate"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:paddingStart="15dp"
-                android:text="@string/Plate_Number"
-                android:textColor="@color/black"
-                android:textColorHint="@color/Gray" />
-
-            <TextView
-                android:id="@+id/tvVehiclePlate"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:paddingStart="15dp"
-                android:textColor="@color/black"
-                android:textColorHint="@color/Gray" />
-
-        </com.google.android.material.textfield.TextInputLayout>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

@@ -32,6 +32,6 @@ class ConsumptionDetailActivity : AppCompatActivity() {
         binding.tvBranch.text = branch
         binding.tvDate.text = date
 
-
     }
+
 }

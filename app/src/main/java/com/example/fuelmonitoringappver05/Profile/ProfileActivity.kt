@@ -1,18 +1,30 @@
 package com.example.fuelmonitoringappver05.Profile
 
+import android.Manifest
+import android.app.Activity
+import android.content.Intent
+import android.graphics.Bitmap
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.provider.MediaStore
 import android.widget.Toast
+import androidx.activity.result.contract.ActivityResultContracts
+import com.example.fuelmonitoringappver05.HomeActivity
 import com.example.fuelmonitoringappver05.databinding.ActivityProfileBinding
 import com.example.fuelmonitoringappver05.firebaseDb.ProfileDao
 import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.ValueEventListener
+import com.karumi.dexter.Dexter
+import com.karumi.dexter.PermissionToken
+import com.karumi.dexter.listener.PermissionDeniedResponse
+import com.karumi.dexter.listener.PermissionGrantedResponse
+import com.karumi.dexter.listener.PermissionRequest
+import com.karumi.dexter.listener.single.PermissionListener
 
 class ProfileActivity : AppCompatActivity() {
 
     lateinit var binding : ActivityProfileBinding
-
     var dao = ProfileDao()
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -20,20 +32,20 @@ class ProfileActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         binding.imgBtnSave.setOnClickListener(){
-            dao.add(Profile(
-                binding.etFullname.text.toString(),
-                binding.etMobile.text.toString(),
-                binding.etEmail.text.toString(),
-                binding.etVehicleName.text.toString(),
-                binding.etVehicleModel.text.toString(),
-                binding.etVehiclePlate.text.toString()))
+                binding.etFullname.text.toString()
+                binding.etMobile.text.toString()
+                binding.etEmail.text.toString()
+                binding.etVehicleName.text.toString()
+                binding.etVehicleModel.text.toString()
+                binding.etVehiclePlate.text.toString()
 
 
             Toast.makeText(applicationContext,"Success!",Toast.LENGTH_SHORT).show()
         }
 
         binding.imgBtnView.setOnClickListener(){
-            view()
+            val intent = Intent(this, HomeActivity::class.java)
+            startActivity(intent)
         }
 
         binding.imgBtnUpdate.setOnClickListener(){
@@ -42,6 +54,13 @@ class ProfileActivity : AppCompatActivity() {
 
         binding.imgBtnDelete.setOnClickListener(){
             deleteData()
+        }
+        binding.imgProfilePhoto.setOnClickListener() {
+            showCameraProfile()
+        }
+
+        binding.imgVehiclePhoto.setOnClickListener() {
+            showCameraVechile()
         }
     }
 
@@ -61,35 +80,81 @@ class ProfileActivity : AppCompatActivity() {
         dao.update("fullName",mapData)
 
     }
-    private fun view() {
-        dao.get().addValueEventListener(object:ValueEventListener {
-            override fun onDataChange(snapshot: DataSnapshot) {
-                var profiles : ArrayList<Profile> = ArrayList<Profile>()
 
-                var dataFromDb = snapshot.children
-//                Toast.makeText(applicationContext,""+dataFromDb,Toast.LENGTH_SHORT).show()
+    private fun showCameraProfile() {
+        Dexter.withContext(this).withPermission(
+            Manifest.permission.CAMERA
+        ).withListener(object : PermissionListener {
+            override fun onPermissionGranted(p0: PermissionGrantedResponse?) {
+                val cameraIntent = Intent(MediaStore.ACTION_IMAGE_CAPTURE)
+//                startActivity(cameraIntent) // only used to access camera
 
-                for(data in dataFromDb){
-                    //get id of Object from DB
-//                    var id = data.key.toString()
+                cameraLauncher1.launch(cameraIntent)
+                Toast.makeText(applicationContext, "Permission Granted", Toast.LENGTH_SHORT).show()
 
-                    var fullName = data.child("fullName").value.toString()
-                    var mobile = data.child("mobile").value.toString()
-                    var email = data.child("email").value.toString()
-                    var vehicleName = data.child("vehicleName").value.toString()
-                    var vehicleModel = data.child("vehicleModel").value.toString()
-                    var vehiclePlate = data.child("vehiclePlate").value.toString()
-
-                    var profile = Profile(fullName, mobile, email, vehicleName, vehicleModel, vehiclePlate)
-                    profiles.add(profile)
-                }
-                Toast.makeText(applicationContext,""+profiles,Toast.LENGTH_SHORT).show()
+//                cameraLauncher2.launch(cameraIntent)
+//                Toast.makeText(applicationContext, "Permission Granted", Toast.LENGTH_SHORT).show()
             }
 
-            override fun onCancelled(error: DatabaseError) {
+            override fun onPermissionDenied(p0: PermissionDeniedResponse?) {
+                Toast.makeText(applicationContext, "Permission Granted", Toast.LENGTH_SHORT).show()
             }
 
+            override fun onPermissionRationaleShouldBeShown(
+                request: PermissionRequest?,
+                token: PermissionToken?
+            ) {
+                token?.continuePermissionRequest()
+            }
 
-        })
+        }).onSameThread().check()
     }
+
+    val cameraLauncher1 =
+        registerForActivityResult(ActivityResultContracts.StartActivityForResult()) { result ->
+            if (result.resultCode == Activity.RESULT_OK) {
+                result.data?.extras.let {
+                    val image1: Bitmap = result.data?.extras?.get("data") as Bitmap
+                    binding.imgProfilePhoto.setImageBitmap(image1)
+                }
+            }
+        }
+
+
+    private fun showCameraVechile() {
+        Dexter.withContext(this).withPermission(
+            Manifest.permission.CAMERA
+        ).withListener(object : PermissionListener {
+            override fun onPermissionGranted(p0: PermissionGrantedResponse?) {
+                val cameraIntent = Intent(MediaStore.ACTION_IMAGE_CAPTURE)
+//                startActivity(cameraIntent) // only used to access camera
+
+                cameraLauncher.launch(cameraIntent)
+                Toast.makeText(applicationContext, "Permission Granted", Toast.LENGTH_SHORT).show()
+
+            }
+
+            override fun onPermissionDenied(p0: PermissionDeniedResponse?) {
+                Toast.makeText(applicationContext, "Permission Granted", Toast.LENGTH_SHORT).show()
+            }
+
+            override fun onPermissionRationaleShouldBeShown(
+                request: PermissionRequest?,
+                token: PermissionToken?
+            ) {
+                token?.continuePermissionRequest()
+            }
+
+        }).onSameThread().check()
+    }
+
+    val cameraLauncher =
+        registerForActivityResult(ActivityResultContracts.StartActivityForResult()) { result ->
+            if (result.resultCode == Activity.RESULT_OK) {
+                result.data?.extras.let {
+                    val image2: Bitmap = result.data?.extras?.get("data") as Bitmap
+                    binding.imgVehiclePhoto.setImageBitmap(image2)
+                }
+            }
+        }
 }

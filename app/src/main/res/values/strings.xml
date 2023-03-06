@@ -28,5 +28,10 @@
     <string name="UsernameEmail">Username / Email</string>
     <string name="Password">Password</string>
 
+    //NOTES
+    <string name="For_Updating">Should be automated</string>
+    <string name="kilometer_Per_Liter">millage / Number of Liters</string>
+
+
 
 </resources>

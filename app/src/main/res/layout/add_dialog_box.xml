@@ -80,7 +80,7 @@
                         android:layout_width="320dp"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="15dp"
-                        android:hint="@string/Kilometer_Per_Liter"
+                        android:hint="@string/kilometer_Per_Liter"
                         android:textColorHint="@color/Gray"
                         app:boxBackgroundColor="@color/white"
                         app:boxStrokeColor="@color/black"
@@ -89,14 +89,13 @@
                         tools:layout_editor_absoluteY="56dp">
 
                         <EditText
-                            android:id="@+id/etKmPerLiterShow"
+                            android:id="@+id/etKmPerLiterAdd"
                             android:layout_width="match_parent"
-                            android:layout_height="match_parent"
+                            android:layout_height="60dp"
+                            android:background="@color/white"
                             android:paddingStart="15dp"
                             android:textColor="@color/black"
-                            android:textColorHint="@color/Gray"
-                            tools:layout_editor_absoluteX="16dp"
-                            tools:layout_editor_absoluteY="7dp" />
+                            android:textColorHint="@color/Gray" />
                     </com.google.android.material.textfield.TextInputLayout>
 
                     <com.google.android.material.textfield.TextInputLayout

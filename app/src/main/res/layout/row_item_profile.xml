@@ -76,7 +76,7 @@
         app:layout_constraintTop_toBottomOf="@+id/imgProfilePhoto">
 
         <EditText
-            android:id="@+id/etFullname"
+            android:id="@+id/tvFullname"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:paddingStart="15dp"
@@ -101,7 +101,7 @@
         app:layout_constraintTop_toBottomOf="@+id/textField1">
 
         <EditText
-            android:id="@+id/etMobile"
+            android:id="@+id/tvMobile"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:paddingStart="15dp"
@@ -126,7 +126,7 @@
         app:layout_constraintTop_toBottomOf="@+id/textField2">
 
         <EditText
-            android:id="@+id/etEmail"
+            android:id="@+id/tvEmail"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:paddingStart="15dp"
@@ -151,7 +151,7 @@
         app:layout_constraintTop_toBottomOf="@+id/textField3">
 
         <EditText
-            android:id="@+id/etVehicleName"
+            android:id="@+id/tvVehicleName"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:paddingStart="15dp"
@@ -177,7 +177,7 @@
         app:layout_constraintTop_toBottomOf="@+id/textField4">
 
         <EditText
-            android:id="@+id/etVehicleModel"
+            android:id="@+id/tvVehicleModel"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:paddingStart="15dp"
@@ -202,7 +202,7 @@
         app:layout_constraintTop_toBottomOf="@+id/textField5">
 
         <EditText
-            android:id="@+id/etVehiclePlate"
+            android:id="@+id/tvVehiclePlate"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:paddingStart="15dp"

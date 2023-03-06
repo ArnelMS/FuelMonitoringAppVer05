@@ -89,7 +89,7 @@
                         tools:layout_editor_absoluteY="56dp">
 
                         <EditText
-                            android:id="@+id/etKmPerLiterShow"
+                            android:id="@+id/etKmPerLiterAdd"
                             android:layout_width="319dp"
                             android:layout_height="match_parent"
                             android:paddingStart="15dp"

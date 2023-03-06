@@ -10,6 +10,7 @@ import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.example.fuelmonitoringappver05.Profile.ProfileActivity
 import com.example.fuelmonitoringappver05.databinding.ActivityMainBinding
 import com.example.fuelmonitoringappver05.databinding.AddDialogBoxBinding
 import com.example.fuelmonitoringappver05.databinding.InfoDialogBoxBinding
@@ -48,12 +49,6 @@ class MainActivity : AppCompatActivity() {
             infoDialogue.show()
 
             Toast.makeText(applicationContext, "SHOWING APP INFO", Toast.LENGTH_SHORT).show()
-
-        }
-        binding.imgBtnMenu.setOnClickListener() {
-
-            Toast.makeText(applicationContext, "SHOWING MENU", Toast.LENGTH_SHORT).show()
-
         }
 //*********************  DATE AND TIME  ******************************************************************************************************
         textView = binding.tvCurrentDate
@@ -122,7 +117,7 @@ class MainActivity : AppCompatActivity() {
             }
 
             homeFAB.setOnClickListener {
-                val intent = Intent(this, HomeActivity::class.java)
+                val intent = Intent(this, ProfileActivity::class.java)
                 startActivity(intent)
                 Toast.makeText(this@MainActivity, "Home clicked..", Toast.LENGTH_LONG).show()
             }
@@ -136,7 +131,8 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    //*********************  ADD DIALOG BOX  ******************************************************************************************************
+//*********************  FUNCTIONS  ******************************************************************************************************
+//*********************  ADD DIALOG BOX  ******************************************************************************************************
     fun showAddDialog() {
         val dialog = Dialog(this)
         val binding: AddDialogBoxBinding = AddDialogBoxBinding.inflate(layoutInflater)
@@ -172,7 +168,12 @@ class MainActivity : AppCompatActivity() {
 //*********************  ROOM DATABASE FUNCTIONS  ******************************************************************************************************
 
         binding.imgBtnSave.setOnClickListener() {
-            var kmPerLtr: String = binding.etKmPerLiterShow.text.toString()
+//            var millage2: String = binding.etMillage.text.toString()
+//            var numberOfLiter2: String = binding.etNumberOfLiter.text.toString()
+//            var average = binding.tvKmPerLiterAdd.text.toString()[millage2.toInt()/numberOfLiter2.toInt()]
+
+
+            var kmPerLtr:String = binding.etKmPerLiterAdd.text.toString()
             var totalAmount: String = binding.etTotalAmountShow.text.toString()
             var millage: String = binding.etMillage.text.toString()
             var pricePerLtr: String = binding.etPricePerLiter.text.toString()
@@ -181,6 +182,8 @@ class MainActivity : AppCompatActivity() {
             var gasStation: String = binding.spinnerGasStation.selectedItem.toString()
             var branch: String = binding.etBranch.text.toString()
             var date: String = binding.etNewDate.text.toString()
+
+
 
             val consumption = Consumptions(
                 kmPerLtr,
@@ -218,10 +221,12 @@ class MainActivity : AppCompatActivity() {
                 }.setNegativeButton("Cancel") { dialog, item ->
                     dialog.dismiss()
                 }.show()
+
         }
         binding.imgBtnCancel.setOnClickListener() {
             dialog.dismiss()
         }
+
     }
 
     private fun save(consumption: Consumptions) {
@@ -240,9 +245,6 @@ class MainActivity : AppCompatActivity() {
                 adapter = ConsumptionAdapter(consumption)
                 adapter.onItemClick = {
 
-
-                    intent.putExtra("kmPerLtr", it.kmPerLtr)
-                    intent.putExtra("kmPerLtr", it.kmPerLtr)
                     intent.putExtra("kmPerLtr", it.kmPerLtr)
                     intent.putExtra("totalAmount", it.totalAmount)
                     intent.putExtra("millage", it.millage)
@@ -298,7 +300,7 @@ class MainActivity : AppCompatActivity() {
         dialog.show()
 
         binding.imgBtnSave.setOnClickListener() {
-            var newKmPerLtr: String = binding.etKmPerLiterShow.text.toString()
+            var newKmPerLtr: String = binding.etKmPerLiterAdd.text.toString()
             var newTotalAmount: String = binding.etTotalAmountShow.text.toString()
             var newMillage: String = binding.etMillage.text.toString()
             var newPricePerLtr: String = binding.etPricePerLiter.text.toString()
@@ -333,5 +335,4 @@ class MainActivity : AppCompatActivity() {
             dialog.dismiss()
         }
     }
-
 }
